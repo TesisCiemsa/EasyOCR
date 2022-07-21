@@ -161,7 +161,7 @@ class OCRDataset(Dataset):
                 except:
                     print(label)
                 out_of_char = f'[^{self.opt.character}]'
-                if re.search(out_of_char, label.lower()):
+                if re.search(out_of_char, label):
                     continue
                 self.filtered_index_list.append(index)
             self.nSamples = len(self.filtered_index_list)
